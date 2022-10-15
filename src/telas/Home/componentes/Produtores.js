@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { FlatList, Text, StyleSheet } from 'react-native';
 
 import Produtor from "./Produtor";
-import { carregaProdutores } from "../../../servicos/carregaDados";
-
+//import { carregaProdutores } from "../../../servicos/carregaDados";
+//TODOS OS COMENTARIOS FORAM PARA O ARQUIVO USEPRODUTORES PQ CRIAMOS O NOSSO
+//PROPRIO HOOK E AQUI ELE SÓ É CHAMADO DO OUTRO ARQUIVO
+import useProdutores from "../../../hooks/useProdutores";
 
 export default function Produtores({ topo: Topo }) {
-    const [titulo, setTitulo] = useState('');
+    const [titulo, lista] = useProdutores();
+    /*const [titulo, setTitulo] = useState('');
     const [lista, setLista] = useState([]);
 
     useEffect(() => {             
@@ -14,7 +17,7 @@ export default function Produtores({ topo: Topo }) {
         setTitulo(retorno.titulo);
         setLista(retorno.lista);
         //console.log(retorno);
-    }, []);
+    }, []);*/
 
     const TopoLista = () => {
         return <>
